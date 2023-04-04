@@ -1,0 +1,73 @@
+/* The focus here is not the properties in the declaration blocks, but on the syntax 
+of CSS selectors. If variation in colour is not a good way to check the display properties 
+for you, then amend the code below to use other properties, e.g. font-height, font-family. */
+
+/* In this stylesheet, we use 3 types of selector: by element type, by class, and by attribute value */
+
+body {
+    background-color: darkgray;
+}
+
+h1 {
+    background-color: yellow;
+}
+
+.important {
+    font-style: italic;
+    font-size: 130%;
+}
+
+/* anything with class="funny" (just that one class) is blue (font) */
+.funny {
+    color: blue;
+}
+
+/* anything that is both funny and important is white (font) */
+/* note: no spaces when chaining class selectors */
+/* also note: this matches class="funny important", class="important funny", 
+   class="important funny other" etc. */
+.funny.important {
+    color: white;
+}
+
+/* select every paragraph with class="important" */
+p.important {
+    background-color: red;
+}
+
+/* select every header with class="important" */
+header.important {
+    background-color: chartreuse;
+}
+
+/* select every element with an href attribute whose value is "http://www.JOHNMEANEY.com" using a 
+   CASE INSENSITIVE equality check (the "i" flag just before the close-square bracket symbol).  */
+/* The actual URL is "http://www.johnmeaney.com" */
+/* without that "i" flag, the following won't match the real URL unless the value is all in lowercase. */
+* [href="http://www.JOHNMEANEY.com" i] {
+    background-color: blueviolet;
+    color: yellow;
+} 
+
+/* Note that instead of using the = operator in a [attributeName=attributeValue] selector, we can
+   use any of the following operators:   ^=   $=   *=   ~=   |=    
+
+   Meaning:     ^=  starts with substring
+                $=  ends with substring
+                *=  contains substring
+                ~=  contains this value in a space-separated list of values
+                |=  contains this exact value or begins with this value suffixed with a hyphen
+
+    The last one requires explanation, and an example is easiest. The language attribute can have a 
+    value of "en", meaning English, or "en-US" meaning US English, or "en-GB" meaning British English. 
+    To select all of the above values, use:
+
+            [lang|="en"]
+
+    More generally, the value can consist of just a language code ("en", "fr") or a language code plus a 
+    hyphen plus a country code (e.g. "US"... language in lowercase, country in uppercase).
+       
+*/
+
+
+

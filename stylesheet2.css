@@ -1,0 +1,57 @@
+/* The focus here is not the properties in the declaration blocks, but on the syntax 
+of CSS selectors. If variation in colour is not a good way to check the display properties 
+for you, then amend the code below to use other properties, e.g. font-height, font-family. */
+
+/* In this stylesheet, we use selectors for descendants (an ancestor-descendant relationship means 
+   one or more levels of nesting within the DOM), for children (a parent-child relationship means 
+   exactly one level of DOM nesting), and for subsequent siblings (same level in the DOM). 
+   
+   Note that for siblings, selection is for subsequent siblings only (not previous siblings).
+
+   */
+
+/* These selectors can replace DOM (Document Object Model) traversal via JavaScript/jQuery code. */
+
+/*
+            SYNTAX FOR DOM SELECTORS:
+            ========================
+
+            ancestor descendant { ... }   all elements of type "descendant" descending from "ancestor"
+
+            parent > child { ... }        all elements of type "child" one level below "parent"
+
+            element ~ sibling { ... }     all elements of type "sibling" that FOLLOW "element" at same level
+
+            element + nextSibling { ... } the next element, provided it's of type "nextSibling", at same level as "element"
+*/
+
+body {
+    background-color: darkgray;
+}
+
+h1 {
+    background-color: yellow;
+}
+
+/* descendant selector: all paragraphs that are inside headers, including paras several layers deeper in the DOM... */
+header p {
+    color: red;
+}
+
+/* children selector:  all paragraphs that are one layer inside headers (if you could have paras inside paras -- you can't -- this would exclude inner ones)... */
+header > p {
+    font-size: 200%;
+}
+
+/* sibling selector:  all paras that are siblings FOLLOWING aside, which is in main... they actually precede it in main */
+aside ~ p {
+    font-style: italic;
+    color: darkblue;
+}
+
+/* next-sibling selector:  the next sibling of h1 provided it is a para */
+h1 + p {
+    color: white;
+    background-color: black;
+}
+ 

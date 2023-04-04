@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <meta charset="utf8" />
+        <title>The amazing FUBAR page</title>
+        <link rel="stylesheet" type="text/css" href="stylesheet1.css" title="JM default" />
+        <!-- note: for the user to access alternates in Firefox, they press F10 or Alt for menu, 
+            which includes the View > Page Style option -->
+        <!-- Chrome requires a plugin (WebExtension), otherwise alternate stylesheets are not supported... -->
+        <link rel="alternate stylesheet" type="text/css" href="stylesheet2.css" title="JM secondary" />
+        <link rel="alternate stylesheet" type="text/css" href="stylesheet3.css" title="JM tertiary" />
+    </head>
+    <body>
+        <header>
+            <p>header one: paragraph one (first element in body)</p>
+            <p>header one: paragraph two</p>
+            <p>header one: paragraph three</p>
+        </header>
+        <header class="important">
+            <p>header two: paragraph one (this header has class="important")</p>
+            <p>header two: paragraph two... N.B. all styling on the three paras in this 
+                header will inherit any styling applied to this header.
+            </p>
+            <p>header two: paragraph three. N.B. Pedagogical warning: "inheritance" here applies to 
+                 nested structures in CSS - note that this is NOT object-oriented inheritance. In 
+                 OOP, nested structures are COMPOSITION or AGGREGATION. (In CSS, it would be better 
+                 simply to say that styles cascade: that's where the 'C' in 'CSS' comes from.)
+            </p>
+            <article>header two: article one
+                <p>nested paragraph inside article, which is inside the 2nd header</p>
+            </article>
+        </header>
+        <header>
+            <p>header three: paragraph one</p>
+            <p class="funny">header three: paragraph two, class="funny"</p>
+            <p>header three: paragraph three (final element preceding main)</p>            
+        </header>
+        <!-- There can be only one <main> per page, but multiple <header> and/or <footer> elements -->
+        <main>
+            <h1>First element in main... happens to be an H1</h1>
+            <p class="important">Second element in main, class = "important"</p>
+            <p>Third element in main, second paragraph</p>
+            <p>Fourth element in main, third paragraph, contains a <a href="http://www.johnmeaney.com">link to an author's website</a>.</p>
+            <p class="funny important">Fifth element in main, fourth paragraph, class="funny important"</p>
+            <aside>An aside... sixth element in main</aside>
+            <p>7th element, 5th para</p>
+            <p>8th element, 6th para</p>
+            <p>9th element, 7th para</p>
+        </main>
+        <footer>
+            <p>footer one: paragraph one (first element after main)</p>
+            <p class="important">footer one: paragraph two, class = "important"</p>
+            <p class="important funny">footer one: paragraph three, class="important funny"</p>
+        </footer>
+        <footer>
+            <p class="important">footer two: paragraph one, class = "important"</p>
+            <p>footer two: paragraph two</p>
+            <p>footer two: paragraph three (final element in body)</p>
+        </footer>
+    </body>
+</html>
